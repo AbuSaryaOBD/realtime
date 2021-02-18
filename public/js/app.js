@@ -17595,6 +17595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["rooms", "currentRoom"],
+  emits: ["roomchanged"],
   data: function data() {
     return {
       selected: ""
@@ -17654,7 +17655,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.currentRoom.id) {
         var vm = this;
         this.getMessages();
-        window.Echo["private"]("chat." + this.currentRoom.id).listen("message.new", function (e) {
+        window.Echo["private"]("chat." + this.currentRoom.id).listen(".message.new", function (e) {
           vm.getMessages();
         });
       }
@@ -21674,12 +21675,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["messages"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_input_message, {
         room: _ctx.currentRoom,
-        onMessagesent: _cache[2] || (_cache[2] = function ($event) {
-          return $options.getMessages();
-        })
+        onMessagesent: $options.getMessages
       }, null, 8
       /* PROPS */
-      , ["room"])])])])];
+      , ["room", "onMessagesent"])])])])];
     }),
     _: 1
     /* STABLE */
