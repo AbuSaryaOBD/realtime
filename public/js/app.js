@@ -17654,7 +17654,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.currentRoom.id) {
         var vm = this;
         this.getMessages();
-        window.Echo["private"]("chat." + this.currentRoom.id).listen(".message.new", function (e) {
+        window.Echo["private"]("chat." + this.currentRoom.id).listen("message.new", function (e) {
           vm.getMessages();
         });
       }
@@ -17706,6 +17706,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["room"],
+  emits: ["messagesent"],
   data: function data() {
     return {
       message: ""
@@ -21784,7 +21785,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.message.user.name) + ":" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.message.message), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.message.user.name) + ": " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.message.message), 1
   /* TEXT */
   );
 }

@@ -18,6 +18,7 @@
 <script>
 export default {
   props: ["rooms", "currentRoom"],
+  emits: ["roomchanged"],
   data: function () {
     return {
       selected: "",

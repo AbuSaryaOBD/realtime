@@ -23,7 +23,7 @@ class ChatController extends Controller
             ->get();
     }
 
-    public function newMessages(Request $request, $roomId)
+    public function newMessage(Request $request, $roomId)
     {
         $newMessage = new ChatMessage();
         $newMessage->user_id = Auth::id();

@@ -21,6 +21,7 @@
 <script>
 export default {
   props: ["room"],
+  emits: ["messagesent"],
   data: function () {
     return {
       message: "",
